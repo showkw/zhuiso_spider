@@ -2,4 +2,4 @@
 #基础配置文件
 
 #临时运行目录
-RUNTIME_DIR = './runtime/'
+RUNTIME_DIR = './qidian/runtime/'
