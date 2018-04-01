@@ -68,8 +68,8 @@ class BdSpider(Spider):
                     self.curr_url['curr_domain'].append(mirr['m_domain'])
                     #使用百度高级查询生成搜索词: (site:搜索域名) intitle: 小说名称 (从指定搜索域名的搜索结果中精确搜索xxx)
                     self.start_urls.append(
-                        'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=(site:' + mirr[
-                            'm_domain'] + ')' + ' intitle:' +row['b_name'])
+                        'https://www.baidu.com/s?ie=utf-8&rn=50&f=8&rsv_bp=1&tn=baidu&wd=(site:' + mirr[
+                            'm_domain'] + ')' + ' intitle:' + row['b_name'])
 
     #生成初始requests请求
     def start_requests(self):
