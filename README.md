@@ -22,7 +22,9 @@ baiduSpider 与 FirstChapter 是分布式爬虫,(都可直接复制多个项目,
 
 linux环境安装依赖:
 
-    1. 安装 sqlite(否则后边会报错)
+    若已安装python 报错:ImportError: No module named _sqlite3
+    直接按照1,2步骤重新编译安装即可
+    1. 安装 sqlite(否则后边会报错)
         wget http://www.sqlite.org/sqlite-amalgamation-3.6.20.tar.gz
 
         tar zxvf  sqlite-amalgamation-3.6.20.tar.gz
@@ -71,8 +73,29 @@ linux环境安装依赖:
          ./configure --prefix=/usr/local/python
 
          make && make install  至此python安装完成
+         
 
-    3. 安装pip
+    3. 安装pip(安装pip前需要前置安装setuptools)
+        wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools19.6.tar.gz#md5=c607dd118eae682c44ed146367a17e26
+        
+        tar -zxvf setuptools-19.6.tar.gz
+
+        cd setuptools-19.6
+
+        python setup.py build
+
+        python setup.py install
+        
+        安装pip
+        wget --no-check-certificate  https://pypi.python.org/packages/source/p/pip/pip-8.0.2.tar.gz#md5=3a73c4188f8dbad6a1e6f6d44d117eeb
+
+        tar -zxvf pip-8.0.2.tar.gz
+
+        cd pip-8.0.2
+
+        python setup.py build
+
+        python setup.py install
     
     4. 安装redis
     
