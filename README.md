@@ -28,6 +28,7 @@ linux环境安装依赖:
     直接按照1,2步骤重新编译安装即可
     
     1. 安装 sqlite(否则后边会报错)
+    
         wget http://www.sqlite.org/sqlite-amalgamation-3.6.20.tar.gz
 
         tar zxvf  sqlite-amalgamation-3.6.20.tar.gz
@@ -39,6 +40,7 @@ linux环境安装依赖:
         make && make install
 
     2. 安装 python (2.7/3.5都行) 注意点:
+    
          py2.7 执行
          
          wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz
@@ -79,6 +81,7 @@ linux环境安装依赖:
          
 
     3. 安装pip(安装pip前需要前置安装setuptools)
+    
         wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools19.6.tar.gz#md5=c607dd118eae682c44ed146367a17e26
         
         tar -zxvf setuptools-19.6.tar.gz
@@ -90,6 +93,7 @@ linux环境安装依赖:
         python setup.py install
         
         安装pip
+        
         wget --no-check-certificate  https://pypi.python.org/packages/source/p/pip/pip-8.0.2.tar.gz#md5=3a73c4188f8dbad6a1e6f6d44d117eeb
 
         tar -zxvf pip-8.0.2.tar.gz
