@@ -22,7 +22,6 @@ pycparser==2.18
 PyDispatcher==2.0.5
 PyMySQL==0.8.0
 pyOpenSSL==17.5.0
-pywin32==221
 queuelib==1.4.2
 redis==2.10.6
 requests==2.18.4

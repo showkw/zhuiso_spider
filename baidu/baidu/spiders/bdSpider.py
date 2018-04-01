@@ -5,7 +5,12 @@ import scrapy
 import redis
 import requests
 import hashlib
-from urllib import parse as parseUrl
+import sys
+
+if sys.version_info.major == 3:
+    from urllib import parse as parseUrl
+else:
+    import urlparse as parseUrl
 from Common.Db import Db
 from scrapy import Selector
 from scrapy_redis.spiders import Spider
