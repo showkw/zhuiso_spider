@@ -19,11 +19,60 @@ FirstChapter目录 从redis队列中获取链接进行采集,从数据库查询�
 baiduSpider 与 FirstChapter 是分布式爬虫,(都可直接复制多个项目,部署到不同的主机运行)
 
 运行之前:
-安装pyhton
-安装pip
-安装requirements.txt依赖
-pip install -r requirements.txt
+linux环境安装:
+    1. 安装 sqlite(否则后边会报错)
+        wget http://www.sqlite.org/sqlite-amalgamation-3.6.20.tar.gz
 
+        tar zxvf  sqlite-amalgamation-3.6.20.tar.gz
+
+        cd  sqlite-3.6.20
+
+        ./configure –prefix=/usr/local/lib/sqlite3
+
+        make && make install
+
+    2. 安装 python (2.7/3.5都行) 注意点:
+         py2.7 执行
+         wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz
+         tar zxvf  Python-2.7.14.tgz
+
+         py3 执行
+         wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
+         tar zxvf  Python-3.6.5.tgz
+
+         重点来了:
+         cd python解压后的目录
+         vi setup.py
+         在下面这段的下一行添加’/usr/local/lib/sqlite3/include’,
+         sqlite_inc_paths = [ ‘/usr/include’,
+
+                                     ‘/usr/include/sqlite’,
+
+                                     ‘/usr/include/sqlite3′,
+
+                                     ‘/usr/local/include’,
+
+                                     ‘/usr/local/include/sqlite’,
+
+                                     ‘/usr/local/include/sqlite3′,
+
+                                     ‘/usr/local/lib/sqlite3/include’,
+
+         ./configure --prefix=/usr/local/python
+
+         make && make install  至此python安装完成
+
+    3. 安装pip
+    4. 安装redis
+    5. 安装requirements.txt依赖(在爬虫项目目录)
+        pip install -r requirements.txt
+
+windows注意 需安装pywin32依赖
+
+然后测试运行
+缺少什么包就 pip install 包名
+
+最后:先配置数据库配置文件信息
 爬虫运行顺序 qidan > baidu > FirstChapter
 
 cd 进入爬虫项目

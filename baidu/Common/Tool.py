@@ -1,5 +1,6 @@
 from Config.UserAgents import USER_AGENTS
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from scrapy import crawler
 import random
 
 #随机返回User-Agent
