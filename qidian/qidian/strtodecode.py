@@ -1,5 +1,6 @@
+#!/usr/bin/env python
 
-#-*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 """编码检测及转换为unicode
 @version:1.2
 """

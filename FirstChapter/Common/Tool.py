@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Config.UserAgents import USER_AGENTS
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware #UserAegent中间件
 import random
