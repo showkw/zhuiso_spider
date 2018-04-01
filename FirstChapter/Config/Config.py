@@ -2,4 +2,4 @@
 #基础配置文件
 
 #临时运行目录
-RUNTIME_DIR = './FirstChpater/runtime/'
+RUNTIME_DIR = './FirstChapter/runtime/'
