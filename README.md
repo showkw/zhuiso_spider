@@ -22,8 +22,11 @@ baiduSpider 与 FirstChapter 是分布式爬虫,(都可直接复制多个项目,
 
 linux环境安装依赖:
 
+
     若已安装python 报错:ImportError: No module named _sqlite3
+    
     直接按照1,2步骤重新编译安装即可
+    
     1. 安装 sqlite(否则后边会报错)
         wget http://www.sqlite.org/sqlite-amalgamation-3.6.20.tar.gz
 
