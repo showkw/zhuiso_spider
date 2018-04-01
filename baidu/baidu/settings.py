@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+# -*- coding: utf-8 -*-
 # Scrapy settings for example project
 #
 # For simplicity, this file contains only the most important settings by
