@@ -30,4 +30,4 @@ cd 进入爬虫项目
 
 1. 临时一次运行  scrapy crawl 爬虫名称( QiDianSpider/bdSpider/fcSpider )
 
-2. 自动重启运行  python main.py
+2. 自动重启运行  python main.py (已更新)
