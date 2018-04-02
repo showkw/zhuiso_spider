@@ -29,8 +29,6 @@ def main():
         workNum = {}
         lastNum = {}
         for sp in slist:
-            print(sp['key'] + 'Spider--运行--' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
-            os.system("python " + sp['runFile'])
             if os.path.exists(sp['fileName']):
                 file = open(sp['fileName'], 'r')
                 workNum[sp['key']] = int(file.read())
