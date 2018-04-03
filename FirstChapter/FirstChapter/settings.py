@@ -61,9 +61,10 @@ DOWNLOAD_TIMEOUT = 5
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
+EXTENSIONS = {
+    # 'scrapy.extensions.telnet.TelnetConsole': None,
+    'FirstChapter.extensions.RedisSpiderSmartIdleClosedExensions': 500,
+}
 
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 #使用scrapy_redis.scheduler调度
@@ -126,3 +127,6 @@ REDIS_URL = 'redis://root:'+REDIS_CONFIG['default']['pass']+'@'+REDIS_CONFIG['de
 HTTPERROR_ALLOWED_CODES = [302, 301]
 
 DEPTH_LIMIT = 3
+
+MYEXT_ENABLED = True  # 开启扩展
+IDLE_NUMBER = 360  # 配置空闲持续时间单位为 360个 ，一个时间单位为5s

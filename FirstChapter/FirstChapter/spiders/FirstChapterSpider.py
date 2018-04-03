@@ -11,7 +11,7 @@ class FirstChapterspider(RedisSpider):
     redis_key = 'fcSpider_urls'
     currKey = 1
     workerFileName = 'fc_worker.txt'
-    db = Db()
+
     def __init__(self, *args, **kwargs):
         domain = kwargs.pop('domain', '')
         self.allowed_domains = filter(None, domain.split(','))
@@ -22,8 +22,10 @@ class FirstChapterspider(RedisSpider):
         self.writeCurrNum()
         el = FirstChapterLoader(response=response)
         #根据链接域名查询数据库中的对应规则信息
+        db = Db()
         sql = "SELECT * from zs_mirror WHERE m_domain='%s'" % self.extractDomainFromURL(response.url)
-        row = self.db.query(sql,'one')
+        row = db.query(sql, 'one')
+        db.close()
         if row:
             #采集获取书籍章节等数据
             return self.contactItemInfo(response,row,el)
@@ -38,8 +40,10 @@ class FirstChapterspider(RedisSpider):
         # 检查书名是否正确
         bookName = self.getBookName(response, row['m_cp_title_rule'])
         if bookName != False:
+            db = Db()
             sql = "SELECT id from zs_book where b_name='%s'" % bookName
-            find = self.db.query(sql,'one')
+            find = db.query(sql, 'one')
+            db.close()
             if find:
                 el = self.getItemInfo(response, row,el)
                 if el != None:

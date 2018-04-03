@@ -24,6 +24,7 @@ class QiDianPipeline(object):
                 if findBook[0]['b_img'] == '' :
                     sql = "UPDATE zs_book set b_img='%s' WHERE id=%d" % (item['bookAvator'],findBook[0]['id'])
                     db.dml(sql)
+                db.close()
                 return item
             else:
                 #不存在
@@ -50,6 +51,7 @@ class QiDianPipeline(object):
                         }
                         twoId = db.insert('zs_category', two)
                         if twoId == False:
+                            db.close()
                             return item
 
                 else:
@@ -62,6 +64,7 @@ class QiDianPipeline(object):
                     }
                     firstId = db.insert('zs_category', ins)
                     if firstId == False:
+                        db.close()
                         return item
 
                     #查询二级分类是否存在
@@ -79,6 +82,7 @@ class QiDianPipeline(object):
                         }
                         twoId = db.insert('zs_category', two)
                         if twoId == False:
+                            db.close()
                             return item
                 #查询作者是否存在
                 authorSql = "SELECT * FROM zs_author WHERE author_name='%s'" % item['bookAuthor']
@@ -90,6 +94,7 @@ class QiDianPipeline(object):
                     ins = {'author_name': item['bookAuthor']}
                     authorId = db.insert('zs_author', ins)
                     if authorId == False:
+                        db.close()
                         return item
                 #插入书籍
                 insertBook = {
@@ -103,8 +108,10 @@ class QiDianPipeline(object):
                     'b_word_num': str(item['wordNumber'])
                 }
                 db.insert('zs_book', insertBook)
+                db.close()
                 return item
         except Exception as e:
+            db.close()
             return item
 
 
