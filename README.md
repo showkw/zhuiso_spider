@@ -126,14 +126,22 @@ cd 进入爬虫项目
 2. 自动重启运行  python main.py (已更新)
 
 更新记录:
+
 2018-04-04 
- 1.百度(bdSpider)停止更新(完全是之前思路想歪了,哈哈 别打我)
- 2.新增coreSpider  还是分布式爬虫(原百度爬虫的替代品),coreSpider将从zs_mirror源表取出所有可用域名,然后进行全站爬取所需数据的链接,将链接压入redis    队列,还是搭配fcSpider 协同工作,coreSpider负责采集链接,fcSpider爬取具体数据
- 3.新增扩展文件extension.py
-   扩展类:RedisSpiderSmartIdleClosedExensions
-   主要解决分布式爬虫空跑问题，redis_key链接跑完后，自动关闭爬虫的问题
- 4.配置文件setting.py 新增扩展类的配置项
- 5.优化爬虫 mysql db链接长时间占用未关闭问题
- 6.data目录 zs_mirror表 新增两个字段 m_scheme(源站协议类型) 和 m_cp_rule_regx( 章节链接匹配正则 )
+
+  1.百度(bdSpider)停止更新(完全是之前思路想歪了,哈哈 别打我)
+  
+  2.新增coreSpider  还是分布式爬虫(原百度爬虫的替代品),coreSpider将从zs_mirror源表取出所有可用域名,然后进行全站爬取所需数据的链接,将链接压入redis    队列,还是搭配fcSpider 协同工作,coreSpider负责采集链接,fcSpider爬取具体数据
+  
+  3.新增扩展文件extension.py
+  
+    扩展类:RedisSpiderSmartIdleClosedExensions
+    主要解决分布式爬虫空跑问题，redis_key链接跑完后，自动关闭爬虫的问题
+    
+  4.配置文件setting.py 新增扩展类的配置项
+  
+  5.优化爬虫 mysql db链接长时间占用未关闭问题
+  
+  6.data目录 zs_mirror表 新增两个字段 m_scheme(源站协议类型) 和 m_cp_rule_regx( 章节链接匹配正则 )
  
  
