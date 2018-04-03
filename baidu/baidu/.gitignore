@@ -1,3 +1,4 @@
 /imgs/*
 /logs/*
 /runtime/*
+*.pyc
