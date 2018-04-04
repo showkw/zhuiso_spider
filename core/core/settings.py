@@ -8,7 +8,6 @@
 #
 from Config.DataBaseConfig import MYSQL_CONFIG, REDIS_CONFIG
 
-COMMANDS_MODULE = 'core.commands'
 SPIDER_MODULES = ['core.spiders']
 NEWSPIDER_MODULE = 'core.spiders'
 
